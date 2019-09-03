@@ -3,7 +3,8 @@ const path = require('path');
 module.exports = {
 	mode: 'development',
 	entry: {
-		main: './src/index.js'
+		main: './src/index.js',
+		main2: './src/font/font.js'
 	},
     module: {
         rules: [{
@@ -16,7 +17,12 @@ module.exports = {
                     limit: 10240
                 }
             }
-        },{
+        }, {
+            test: /\.(eot|ttf|svg)$/,
+            use: {
+                loader: 'file-loader'
+            }
+        }, {
             test: /\.scss$/,
             use: [
                 'style-loader',
@@ -24,7 +30,7 @@ module.exports = {
                     loader: 'css-loader',
                     options: {
                         importLoaders: 2,
-                        modules: true
+                        // modules: true
                     }
                 },
                 'sass-loader',
@@ -33,7 +39,7 @@ module.exports = {
         }]
 	},
     output: {
-		filename: 'bundle.js',
+        filename: '[name].js',
 		path: path.resolve(__dirname, 'dist')
 	}
 }
