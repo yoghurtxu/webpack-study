@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "http://cdn.com.cn";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -174,7 +174,7 @@ eval("module.exports = __webpack_require__.p + \"15896c714201eaef1215af2ba0b2817
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"cc8887715dedb4956bd6e873877cd9b9.svg\";\n\n//# sourceURL=webpack:///./src/font/iconfont.svg?");
+eval("module.exports = __webpack_require__.p + \"9c99b42a8db187e903c1e1557d51007a.svg\";\n\n//# sourceURL=webpack:///./src/font/iconfont.svg?");
 
 /***/ }),
 
