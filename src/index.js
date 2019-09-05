@@ -16,5 +16,5 @@ img.src=Avatar;
 var root=document.querySelector('#root')
 root.append(img)
 
-console.log(22)
+console.log(1)
 

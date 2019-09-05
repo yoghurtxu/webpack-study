@@ -6,8 +6,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "webpack --watch",
-    "start": "webpack-dev-server"
+    "bundle": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server",
+    "server": "node server.js"
   },
   "author": "xrz",
   "license": "ISC",
@@ -15,6 +17,7 @@
     "autoprefixer": "^9.6.1",
     "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^3.2.0",
+    "express": "^4.17.1",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
@@ -23,6 +26,7 @@
     "style-loader": "^1.0.0",
     "url-loader": "^1.1.2",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7"
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-middleware": "^3.7.1"
   }
 }
