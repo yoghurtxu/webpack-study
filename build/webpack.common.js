@@ -61,25 +61,25 @@ module.exports = {
         splitChunks: {
         	//所有文件（包含异步和同步）都做代码分割，配合cacheGroups使用
             chunks: 'all',
-			//大于30KB才做代码分割
-            minSize: 30000,
-            minChunks: 1,
-            maxAsyncRequests: 5,
-            maxInitialRequests: 3,
-            automaticNameDelimiter: '~',
-            name: true,
-            cacheGroups: {
-                vendors: {
-                    test: /[\\/]node_modules[\\/]/,
-                    priority: -10,
-                    filename: 'vendors.js',
-                },
-                default: {
-                    priority: -20,
-                    reuseExistingChunk: true,
-                    filename: 'common.js'
-                }
-            }
+			//大于30KB才做代码分割（30000）
+            // minSize: 0,
+            // minChunks: 1,
+            // maxAsyncRequests: 5,
+            // maxInitialRequests: 3,
+            // automaticNameDelimiter: '~',
+            // name: true,
+            // cacheGroups: {
+            //     vendors: {
+            //         test: /[\\/]node_modules[\\/]/,
+            //         priority: -10,
+            //         filename: 'vendors.js',
+            //     },
+            //     default: {
+            //         priority: -20,
+            //         reuseExistingChunk: true,
+            //         filename: 'common.js'
+            //     }
+            // }
         }
     },
 	output: {
