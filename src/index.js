@@ -84,15 +84,25 @@ document.body.appendChild(element);*/
 // 2. 异步代码(import): 异步代码，无需做任何配置，会自动进行代码分割，放置到新的文件中
 
 //懒加载
-async function getComponent() {
-    const { default: _ } = await import('lodash');
-    const element = document.createElement('div');
-    element.innerHTML = _.join(['Dell', 'Lee'], '-');
-    return element;
-}
-
+// async function getComponent() {
+//     const { default: _ } = await import('lodash');
+//     const element = document.createElement('div');
+//     element.innerHTML = _.join(['Dell', 'Lee'], '-');
+//     return element;
+// }
+//
+// document.addEventListener('click', () =>{
+//     getComponent().then(element => {
+//         document.body.appendChild(element);
+//     });
+// })
+//场景：点击之后才加载click.js,这样提高代码的利用率，但是可能带来的问题是，点击之后加载click.js需要一段时间，所以webpackPrefetch 在主要的代码加载完之后，对clikc.js进行加载，
+//所以webpackPrefetch是主代码加载完后，加载click.js,而webpackPreload是click.js会跟主代码一起异步加载，文档：https://webpack.js.org/guides/code-splitting/#prefetchingpreloading-modules
+//webpackPrefetch在浏览器可能有兼容问题
+//在network中查看，ctrl+shift+P 输入coverage
 document.addEventListener('click', () =>{
-    getComponent().then(element => {
-        document.body.appendChild(element);
-    });
-})
+    import(/* webpackPrefetch: true */ './click.js').then(({default: func}) => {
+        func();
+    })
+});
+

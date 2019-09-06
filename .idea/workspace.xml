@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a51c0d7-442d-4481-88f7-970c67fce1ee" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/src/click.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/1.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -76,7 +72,7 @@
           <entry key="css" value="1" />
           <entry key="html" value="12" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="42" />
+          <entry key="js" value="43" />
           <entry key="json" value="6" />
           <entry key="scss" value="4" />
         </counts>
@@ -87,7 +83,7 @@
           <entry key="HTML" value="12" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="42" />
+          <entry key="JavaScript" value="43" />
           <entry key="SCSS" value="4" />
         </counts>
       </usages-collector>
@@ -96,7 +92,7 @@
           <entry key="babelrc" value="22" />
           <entry key="css" value="10" />
           <entry key="html" value="5" />
-          <entry key="js" value="812" />
+          <entry key="js" value="1033" />
           <entry key="json" value="41" />
           <entry key="scss" value="3" />
         </counts>
@@ -106,7 +102,7 @@
           <entry key="CSS" value="10" />
           <entry key="HTML" value="5" />
           <entry key="JSON" value="63" />
-          <entry key="JavaScript" value="812" />
+          <entry key="JavaScript" value="1033" />
           <entry key="SCSS" value="3" />
         </counts>
       </usages-collector>
@@ -123,7 +119,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stats.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
@@ -150,11 +146,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="89" column="49" selection-start-line="89" selection-start-column="49" selection-end-line="89" selection-end-column="49" />
+            <state relative-caret-position="353">
+              <caret line="105" column="6" lean-forward="true" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/click.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -184,8 +189,8 @@
       <list>
         <option value="SCSS File" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -228,9 +233,10 @@
         <option value="$PROJECT_DIR$/build/webpack.dev.js" />
         <option value="$PROJECT_DIR$/src/.babelrc" />
         <option value="$PROJECT_DIR$/demo.html" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/build/webpack.common.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/click.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
       </list>
     </option>
   </component>
@@ -270,6 +276,11 @@
             <path>
               <item name="webpack-study2" type="b2602c69:ProjectViewProjectNode" />
               <item name="webpack-study2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webpack-study2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webpack-study2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -341,15 +352,16 @@
       <workItem from="1567480520863" duration="4871000" />
       <workItem from="1567686395707" duration="8569000" />
       <workItem from="1567735458931" duration="8960000" />
-      <workItem from="1567754820621" duration="14767000" />
+      <workItem from="1567754820621" duration="15651000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49471000" />
+    <option name="totallyTimeSpent" value="50355000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -586,13 +598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="89" column="49" selection-start-line="89" selection-start-column="49" selection-end-line="89" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -635,6 +640,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/click.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="105" column="6" lean-forward="true" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
         </state>
       </provider>
     </entry>
