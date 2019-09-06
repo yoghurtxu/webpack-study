@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 module.exports = {
 	mode: 'development',
     // development devtool: 'cheap-module-eval-source-map',
@@ -13,7 +14,9 @@ module.exports = {
     devServer: {
         contentBase: './dist',
         open: true,
-        port: 8080
+        port: 8080,
+        hot:true,
+        hotOnly:true
     },
     module: {
         rules: [{
@@ -45,11 +48,19 @@ module.exports = {
                 'sass-loader',
                 'postcss-loader'
             ]
+        }, {
+            test: /\.css$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'postcss-loader'
+            ]
         }]
 	},
     plugins: [new HtmlWebpackPlugin({
         template: 'src/index.html'
-    }), new CleanWebpackPlugin(['dist'])],
+    }), new CleanWebpackPlugin(['dist']),
+        new webpack.HotModuleReplacementPlugin()],
     output: {
         // publicPath:'http://cdn.com.cn',
         filename: '[name].js',
