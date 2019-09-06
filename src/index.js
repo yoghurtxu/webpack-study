@@ -30,7 +30,7 @@
 // }
 // console.log(12)
 
-
+// import "@babel/polyfill";
 import counter from './counter';
 import number from './number';
 
@@ -43,3 +43,5 @@ if(module.hot) {
         number();
     })
 }
+
+const aaa=1;

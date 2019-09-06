@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    [
+      //写框架的时候，避免全局注入污染，要使用这个，文档：https://babeljs.io/docs/en/babel-plugin-transform-runtime#docsNav
+      "@babel/plugin-transform-runtime",
+      {
+        //"absoluteRuntime": false,
+        //2 要安装npm install --save @babel/runtime-corejs2
+        "corejs": 2,
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": false
+      }
+    ]
+  ]
+}
