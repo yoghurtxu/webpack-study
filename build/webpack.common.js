@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const webpack = require('webpack');
 module.exports = {
 	entry: {
 		main: './src/index.js'
@@ -10,7 +10,16 @@ module.exports = {
 		rules: [{
 			test: /\.js$/,
 			exclude: /node_modules/,
-			loader: 'babel-loader',
+			// loader: 'babel-loader',
+			//shimming
+            use: [{
+                loader: 'babel-loader'
+            }
+            // , {
+				//只是为了举例，运行的时候import 中this会指向window，导致导入模块有问题
+                // loader: 'imports-loader?this=window'
+            // }
+            ]
 		}, {
 			test: /\.(jpg|png|gif)$/,
 			use: {
@@ -34,7 +43,12 @@ module.exports = {
 		}),
 		new CleanWebpackPlugin(['dist'],{
             root: path.resolve(__dirname, '../')
-		})
+		}),
+		//例子：用到$的文件自动import jq
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            _join: ['lodash', 'join']
+        }),
 	],
     optimization: {
 		//文档：
