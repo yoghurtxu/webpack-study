@@ -38,6 +38,9 @@ module.exports = {
 	],
     optimization: {
 		//文档：
+        runtimeChunk: {
+            name: 'runtime'
+        },
         usedExports:true,
         splitChunks: {
         	//所有文件（包含异步和同步）都做代码分割，配合cacheGroups使用
