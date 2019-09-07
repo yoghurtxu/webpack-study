@@ -3,7 +3,7 @@
 /******/ 	function webpackJsonpCallback(data) {
 /******/ 		var chunkIds = data[0];
 /******/ 		var moreModules = data[1];
-/******/
+/******/ 		var executeModules = data[2];
 /******/ 		var prefetchChunks = data[3] || [];
 /******/ 		// add "moreModules" to the modules object,
 /******/ 		// then flag all "chunkIds" as loaded and fire callback
@@ -21,27 +21,51 @@
 /******/ 			}
 /******/ 		}
 /******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
-/******/ 		// chunk prefetching for javascript
-/******/ 		prefetchChunks.forEach(function(chunkId) {
-/******/ 			if(installedChunks[chunkId] === undefined) {
-/******/ 				installedChunks[chunkId] = null;
-/******/ 				var link = document.createElement('link');
-/******/
-/******/ 				if (__webpack_require__.nc) {
-/******/ 					link.setAttribute("nonce", __webpack_require__.nc);
-/******/ 				}
-/******/ 				link.rel = "prefetch";
-/******/ 				link.as = "script";
-/******/ 				link.href = jsonpScriptSrc(chunkId);
-/******/ 				document.head.appendChild(link);
-/******/ 			}
-/******/ 		});
+/******/ 		deferredPrefetch.push.apply(deferredPrefetch, prefetchChunks);
 /******/ 		while(resolves.length) {
 /******/ 			resolves.shift()();
 /******/ 		}
 /******/
-/******/ 	};
+/******/ 		// add entry modules from loaded chunk to deferred list
+/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
 /******/
+/******/ 		// run deferred modules when all chunks ready
+/******/ 		return checkDeferredModules();
+/******/ 	};
+/******/ 	function checkDeferredModules() {
+/******/ 		var result;
+/******/ 		for(var i = 0; i < deferredModules.length; i++) {
+/******/ 			var deferredModule = deferredModules[i];
+/******/ 			var fulfilled = true;
+/******/ 			for(var j = 1; j < deferredModule.length; j++) {
+/******/ 				var depId = deferredModule[j];
+/******/ 				if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 			}
+/******/ 			if(fulfilled) {
+/******/ 				deferredModules.splice(i--, 1);
+/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 			}
+/******/ 		}
+/******/ 		if(deferredModules.length === 0) {
+/******/ 			// chunk prefetching for javascript
+/******/ 			deferredPrefetch.forEach(function(chunkId) {
+/******/ 				if(installedChunks[chunkId] === undefined) {
+/******/ 					installedChunks[chunkId] = null;
+/******/ 					var link = document.createElement('link');
+/******/
+/******/ 					if (__webpack_require__.nc) {
+/******/ 						link.setAttribute("nonce", __webpack_require__.nc);
+/******/ 					}
+/******/ 					link.rel = "prefetch";
+/******/ 					link.as = "script";
+/******/ 					link.href = jsonpScriptSrc(chunkId);
+/******/ 					document.head.appendChild(link);
+/******/ 				}
+/******/ 			});
+/******/ 			deferredPrefetch.length = 0;
+/******/ 		}
+/******/ 		return result;
+/******/ 	}
 /******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -50,14 +74,14 @@
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		0: 0
+/******/ 		1: 0
 /******/ 	};
 /******/
-/******/
+/******/ 	var deferredModules = [], deferredPrefetch = [];
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + "." + {"1":"9d05131c13024d2c04f5"}[chunkId] + ".js"
+/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + "." + {"2":"060d81aff5ca52a79c04"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -209,168 +233,8 @@
 /******/ 	var parentJsonpFunction = oldJsonpFunction;
 /******/
 /******/
-/******/ 	var startupResult = (function() {
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
-/******/ 	})();
-/******/
-/******/ 	webpackJsonpCallback([[], {}, 0, [1]]);
-/******/ 	return startupResult;
+/******/ 	// run deferred modules from other chunks
+/******/ 	checkDeferredModules();
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style1_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _style1_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style1_css__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-var Header = __webpack_require__(3);
-
-var Sidebar = __webpack_require__(4); // var Content = require('./content.js');
-// var Avatar = require('./avatar.jpg');
-// import style from './index.scss';
-// import createAvatar from './createAvatar.js';
-
-
-new Header();
-new Sidebar(); // new Content();
-//
-// console.log(style)
-// createAvatar();
-// var img=new Image();
-// img.classList.add(style.avatar);
-// img.src=Avatar;
-// var root=document.querySelector('#root')
-// root.append(img)
-//
-// console.log(1)
-// import './style.css';
-// var btn = document.createElement('button');
-// btn.innerHTML = '新增';
-// document.body.appendChild(btn);
-//
-// btn.onclick = function() {
-// 	var div = document.createElement('div');
-// 	div.innerHTML = 'item';
-// 	document.body.appendChild(div);
-// }
-// console.log(12)
-// import "@babel/polyfill";
-
-/*import counter from './counter';
-import number from './number';
-
-counter();
-number();
-
-if(module.hot) {
-    module.hot.accept('./number', () => {
-        document.body.removeChild(document.getElementById('number'));
-        number();
-    })
-}
-
-const aaa=1;*/
-// Tree Shaking 只支持 ES Module
-// import { add } from './math.js';
-//
-// add(1, 7);
-//同步代码
-
-/*import _ from 'lodash';
-// import jquery from 'jquery';
-
-var element = document.createElement('div');
-element.innerHTML = _.join(['Dell', 'Lee'], '-');
-document.body.appendChild(element);*/
-//异步代码
-// function getComponent() {
-//     //测试的异步代码，需要安装babel-plugin-dynamic-import-webpack（非官方），或者@babel/plugin-syntax-dynamic-import(官方)
-//     return import('lodash').then(({ default: _ }) => {
-//         var element = document.createElement('div');
-//         element.innerHTML = _.join(['Dell', 'Lee'], '-');
-//         return element;
-//     })
-// }
-//
-// getComponent().then(element => {
-//     document.body.appendChild(element);
-// });
-// 代码分割，和webpack无关
-// webpack中实现代码分割，两种方式
-// 1. 同步代码： 只需要在webpack.common.js中做optimization的配置即可
-// 2. 异步代码(import): 异步代码，无需做任何配置，会自动进行代码分割，放置到新的文件中
-//懒加载
-// async function getComponent() {
-//     const { default: _ } = await import('lodash');
-//     const element = document.createElement('div');
-//     element.innerHTML = _.join(['Dell', 'Lee'], '-');
-//     return element;
-// }
-//
-// document.addEventListener('click', () =>{
-//     getComponent().then(element => {
-//         document.body.appendChild(element);
-//     });
-// })
-//场景：点击之后才加载click.js,这样提高代码的利用率，但是可能带来的问题是，点击之后加载click.js需要一段时间，所以webpackPrefetch 在主要的代码加载完之后，对clikc.js进行加载，
-//所以webpackPrefetch是主代码加载完后，加载click.js,而webpackPreload是click.js会跟主代码一起异步加载，文档：https://webpack.js.org/guides/code-splitting/#prefetchingpreloading-modules
-//webpackPrefetch在浏览器可能有兼容问题
-//在network中查看，ctrl+shift+P 输入coverage
-
-document.addEventListener('click', () => {
-  __webpack_require__.e(/* import() */ 1).then(__webpack_require__.bind(null, 5)).then(({
-    default: func
-  }) => {
-    func();
-  });
-});
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-function Header() {
-  var dom = document.getElementById('root');
-  var header = document.createElement('div');
-  header.innerText = 'header';
-  dom.append(header);
-}
-
-module.exports = Header;
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-function Sidebar() {
-  var dom = document.getElementById('root');
-  var sidebar = document.createElement('div');
-  sidebar.innerText = 'sidebar';
-  dom.append(sidebar);
-}
-
-module.exports = Sidebar;
-
-/***/ })
-/******/ ]);
-//# sourceMappingURL=main.83d43fc6b60e466b61f7.js.map
+/******/ ([]);

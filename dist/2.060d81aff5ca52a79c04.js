@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[1],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[2],{
 
 /***/ 5:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -16,4 +16,3 @@ function handleClick() {
 /***/ })
 
 }]);
-//# sourceMappingURL=1.9d05131c13024d2c04f5.js.map

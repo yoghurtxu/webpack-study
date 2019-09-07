@@ -5,7 +5,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const prodConfig = {
 	mode: 'production',
-	devtool: 'cheap-module-source-map',
+	// devtool: 'cheap-module-source-map',
     module:{
         rules:[
              {
@@ -42,6 +42,7 @@ const prodConfig = {
         })
     ],
     output: {
+	    //打包后contenthash hash值会变，浏览器就会更新引入的文件，而不是使用缓存
         filename: '[name].[contenthash].js',
         chunkFilename: '[name].[contenthash].js'
     }
