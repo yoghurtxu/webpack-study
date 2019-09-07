@@ -1,3 +1,5 @@
+import './style.css';
+import './style1.css';
 var Header = require('./header.js');
 var Sidebar = require('./sidebar.js');
 // var Content = require('./content.js');

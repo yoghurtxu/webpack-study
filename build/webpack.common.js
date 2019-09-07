@@ -26,26 +26,6 @@ module.exports = {
 			use: {
 				loader: 'file-loader'
 			}
-		}, {
-			test: /\.scss$/,
-			use: [
-				'style-loader',
-				{
-					loader: 'css-loader',
-					options: {
-						importLoaders: 2
-					}
-				},
-				'sass-loader',
-				'postcss-loader'
-			]
-		}, {
-			test: /\.css$/,
-			use: [
-				'style-loader',
-				'css-loader',
-				'postcss-loader'
-			]
 		}]
 	},
 	plugins: [
@@ -58,6 +38,7 @@ module.exports = {
 	],
     optimization: {
 		//文档：
+        usedExports:true,
         splitChunks: {
         	//所有文件（包含异步和同步）都做代码分割，配合cacheGroups使用
             chunks: 'all',
