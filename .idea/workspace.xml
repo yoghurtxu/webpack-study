@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8a51c0d7-442d-4481-88f7-970c67fce1ee" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.common.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.dev.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/webpack.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stats.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,33 +24,6 @@
         <option value="CSS File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>avatar</find>
-      <find>main</find>
-      <find>babel/preset-env</find>
-      <find>plugin</find>
-      <find>sli</find>
-      <find>sidebar</find>
-      <find>header</find>
-      <find>plugin-syntax-dynamic-import</find>
-      <find>optimization</find>
-      <find>webpack</find>
-      <find>OptimizeCSSAssetsPlugin</find>
-      <find>merge</find>
-      <find>CleanWebpackPlugin</find>
-      <find>HtmlWebpackPlugin</find>
-      <find>html-webpack-plugin</find>
-      <find>devConfig</find>
-      <find>prodConfig</find>
-      <find>commonConfig</find>
-      <find>assetsPublicPath</find>
-      <find>assetsPath</find>
-    </findStrings>
-    <dirStrings>
-      <dir>E:\HTML\webpack-study2</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -129,7 +106,7 @@
       <workItem from="1567868504053" duration="588000" />
       <workItem from="1567905862604" duration="2087000" />
       <workItem from="1567945358063" duration="652000" />
-      <workItem from="1567993809305" duration="3464000" />
+      <workItem from="1567993809305" duration="5563000" />
     </task>
     <servers />
   </component>

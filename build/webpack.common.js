@@ -2,10 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
-const devConfig = require('./webpack.dev.js');
-const prodConfig = require('./webpack.prod.js');
-const commonConfig  = {
+// const merge = require('webpack-merge');
+// const devConfig = require('./webpack.dev.js');
+// const prodConfig = require('./webpack.prod.js');
+// const commonConfig  = {
+module.exports={
 	entry: {
 		main: './src/index.js'
 	},
@@ -63,24 +64,24 @@ const commonConfig  = {
         	//所有文件（包含异步和同步）都做代码分割，配合cacheGroups使用
             chunks: 'all',
 			//大于30KB才做代码分割（30000）
-            // minSize: 0,
-            // minChunks: 1,
-            // maxAsyncRequests: 5,
-            // maxInitialRequests: 3,
-            // automaticNameDelimiter: '~',
-            // name: true,
-            // cacheGroups: {
-            //     vendors: {
-            //         test: /[\\/]node_modules[\\/]/,
-            //         priority: -10,
-            //         filename: 'vendors.js',
-            //     },
-            //     default: {
-            //         priority: -20,
-            //         reuseExistingChunk: true,
-            //         filename: 'common.js'
-            //     }
-            // }
+            minSize: 0,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: '~',
+            name: true,
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10,
+                    filename: 'vendors.js',
+                },
+                default: {
+                    priority: -20,
+                    reuseExistingChunk: true,
+                    filename: 'common.js'
+                }
+            }
         }
     },
 	output: {
@@ -89,10 +90,10 @@ const commonConfig  = {
 	}
 }
 
-module.exports = (env) => {
-    if(env && env.production) {
-        return merge(commonConfig, prodConfig);
-    }else {
-        return merge(commonConfig, devConfig);
-    }
-}
+// module.exports = (env) => {
+//     if(env && env.production) {
+//         return merge(commonConfig, prodConfig);
+//     }else {
+//         return merge(commonConfig, devConfig);
+//     }
+// }

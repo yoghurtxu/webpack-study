@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-
+const merge = require('webpack-merge');
+const commonConfig = require('./webpack.common.js');
 const prodConfig = {
 	mode: 'production',
 	devtool: 'cheap-module-source-map',
@@ -31,7 +32,8 @@ const prodConfig = {
     },
     optimization: {
 	    //合并压缩css代码
-        minimizer: [new OptimizeCSSAssetsPlugin({})]
+        minimizer: [new OptimizeCSSAssetsPlugin({
+        })]
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -46,4 +48,5 @@ const prodConfig = {
     }
 }
 
-module.exports = prodConfig;
+// module.exports = prodConfig;
+module.exports = merge(commonConfig, prodConfig);
