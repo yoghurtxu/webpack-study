@@ -7,8 +7,17 @@ const devConfig = {
 	devServer: {
 		contentBase: './dist',
 		open: true,
-		port: 8001,
-		hot: true
+		port: 8006,
+		hot: true,
+        //文档：https://www.webpackjs.com/configuration/dev-server/#devserver-proxy
+        proxy: {
+            '/react/api': {
+                target: 'https://www.dell-lee.com',
+                pathRewrite: {
+                    'header.json': 'demo.json'
+                }
+            }
+        }
 	},
 	module:{
 		rules:[

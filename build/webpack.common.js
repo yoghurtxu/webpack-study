@@ -39,7 +39,11 @@ module.exports={
 			use: {
 				loader: 'file-loader'
 			}
-		}]
+		},{
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/
+        }]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({

@@ -2,6 +2,8 @@
 // import './style1.css';
 var Header = require('./header.js');
 var Sidebar = require('./sidebar.js');
+var ty = require('./type.tsx');
+import axios from 'axios';
 // var Content = require('./content.js');
 // var Avatar = require('./avatar.jpg');
 // import style from './index.scss';
@@ -110,3 +112,10 @@ document.addEventListener('click', () =>{
 
 
 $('#root').css('background','red')
+setTimeout(()=>{
+    axios.get('/react/api/header.json')
+        .then((res) => {
+            console.log(res);
+        })
+},8000)
+
