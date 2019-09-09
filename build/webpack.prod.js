@@ -40,7 +40,7 @@ const prodConfig = {
         })
     ],
     output: {
-	    //打包后contenthash hash值会变，浏览器就会更新引入的文件，而不是使用缓存
+	    //打包后contenthash hash值会变，浏览器就会更新引入的文件，而不是使用缓存,要看效果，此文件的devtool要先注释
         filename: '[name].[contenthash].js',
         chunkFilename: '[name].[contenthash].js'
     }
